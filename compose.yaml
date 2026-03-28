@@ -10,12 +10,13 @@ services:
       - DEBUG=1
       - DATABASE_URL=postgres://postgres:postgres@db:5432/smartbase
       - DJANGO_SETTINGS_MODULE=config.settings
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
     depends_on:
       db:
         condition: service_healthy
 
   db:
-    image: postgres:16-alpine
+    image: postgres:17-alpine
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
