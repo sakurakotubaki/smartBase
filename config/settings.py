@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # Third party
     "rest_framework",
     # Local apps
+    "knowledge",
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 20,
 }
+
+
+# Gemini API
+GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
